@@ -839,7 +839,7 @@
             To quantify filament ovality, we computed:
           </p>
           <ul>
-            <li>Pointwise ovality: Dmax- Dmin for each point</li>
+            <li>Pointwise ovality: <u>Dmax- Dmin</u> for each point</li>
             <li>Mean ovality: average of all pointwise ovality values</li>
             <li>Maximum ovality: largest ovality value observed across the filament</li>
           </ul>
@@ -874,10 +874,10 @@
             <image-component tag="figure-16" source="assets/figure16_c4.jpg"
               subtitle="Figure 16: Mean Ovality vs Wind Speed for Bladeless Fan and Control Setup"></image-component>
               <p>
-                For the Control Setup, mean ovality remained relatively low at the lowest fan setting but increased consistently as fan speed increased. This trend indicates that stronger airflow applied from a single direction introduced greater cooling asymmetry, which in turn led to higher anisotropic shrinkage and increased ovality. As wind speed increased from 0.8 m/s to 1.1 m/s, mean ovality rose from 0.062 mm to 0.081 mm. A further increase in wind speed to 1.8 m/s resulted in an additional rise in mean ovality to 0.097 mm, reinforcing the observation that higher unidirectional airflow exacerbates filament cross-section distortion.
+                For the <strong>Control Setup</strong>, mean ovality remained relatively low at the lowest fan setting but increased consistently as fan speed increased. This trend indicates that stronger airflow applied from a single direction introduced greater cooling asymmetry, which in turn led to higher anisotropic shrinkage and increased ovality. As wind speed increased from 0.8 m/s to 1.1 m/s, mean ovality rose from 0.062 mm to 0.081 mm. A further increase in wind speed to 1.8 m/s resulted in an additional rise in mean ovality to 0.097 mm, reinforcing the observation that higher unidirectional airflow exacerbates filament cross-section distortion.
               </p>
               <p>
-                In contrast, the Bladeless Fan Setup initially exhibited the opposite behaviour. Between 0.8 m/s and 1.1 m/s, mean ovality decreased from 0.096 mm to 0.090 mm, aligning with our expectation that a more circumferential and evenly distributed cooling profile would reduce anisotropic shrinkage. However, at the highest tested wind speed of 1.8 m/s, mean ovality increased to 0.109 mm. This produced a non-monotonic trend that diverged from our original hypothesis, which anticipated a continuous reduction in ovality with increasing uniform airflow.
+                In contrast, the <strong>Bladeless Fan Setup</strong> initially exhibited the opposite behaviour. Between 0.8 m/s and 1.1 m/s, mean ovality decreased from 0.096 mm to 0.090 mm, aligning with our expectation that a more circumferential and evenly distributed cooling profile would reduce anisotropic shrinkage. However, at the highest tested wind speed of 1.8 m/s, mean ovality increased to 0.109 mm. This produced a non-monotonic trend that diverged from our original hypothesis, which anticipated a continuous reduction in ovality with increasing uniform airflow.
               </p>
               <p>
                 To understand this, we examined existing airflow studies on bladeless fans. These studies show that bladeless airflow is not truly uniform around the ring; rather, the upper and lateral regions tend to receive disproportionately higher air velocities compared to the lower portions of the annulus. This creates circumferential velocity gradients rather than a perfectly even cooling field (Fig 17). 
@@ -904,7 +904,7 @@
           <div id="modification-2-description">
             <h4>4.6.1 Description</h4>
             <p>
-              We advanced to the Wind Tunnel cooling system (Concept B) to eliminate the circumferential airflow inconsistencies identified earlier.
+              We advanced to the <strong>Wind Tunnel cooling system</strong> (Concept B) to eliminate the circumferential airflow inconsistencies identified earlier.
             </p>
             <p>
               The wind tunnel confines and channels airflow through a ‘cooling chamber’, ensuring air moves smoothly along the filament’s axis rather than dispersing unevenly. This promotes consistent convective heat transfer across the entire circumference of the filament and reduces the formation of localised crystallisation gradients and hence ovality.
@@ -945,10 +945,13 @@
               subtitle="Figure 25: Side view of Flow Trajectories of air flow in Wind Tunnel"></image-component>
             <image-component tag="figure-26" source="assets/figure26_c4.jpg"
               subtitle="Figure 26: Side view of Cut Plot of air flow in Wind Tunnel"></image-component>
-            <image-component tag="figure-27" source="assets/figure27_c4.jpg"
-              subtitle="Figure 27: Front view of Cut Plot of air flow"></image-component>
-            <image-component tag="figure-28" source="assets/figure28_c4.jpg"
-              subtitle="Figure 28: Air Flow around filament’s surface (no turbulent flow)"></image-component>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <image-component tag="figure-27" source="assets/figure27_c4.jpg"
+                  subtitle="Figure 27: Front view of Cut Plot of air flow" style="max-width: 45%;"></image-component>
+              
+                <image-component tag="figure-28" source="assets/figure28_c4.jpg"
+                  subtitle="Figure 28: Air Flow around filament’s surface (no turbulent flow)" style="max-width: 45%;"></image-component>
+              </div>
             <p>
               <u>Further Investigation</u>
             </p>
