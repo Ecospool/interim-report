@@ -110,28 +110,34 @@
         <sl-tree-item expanded>
           <a href="#design-methodology">3. Design Methodology</a>
           <sl-tree-item>
-            <a href="#design-challenges">3.1 Design Challenges</a>
+            <a href="#metrics">3.1 Metrics of Filament Consistency</a>
             <sl-tree-item>
-              <a href="#semi-crystalline-structure">3.1.1 Semi-Crystalline Structure</a>
+              <a href="#ovality">3.1.1 Ovality</a>
             </sl-tree-item>
             <sl-tree-item>
-              <a href="#complex-viscosity-sensitivity">3.1.2 Complex Viscosity Sensitivity to Temperature Changes</a>
+              <a href="#deviation-diameter">3.1.2 Deviation of Diameter</a>
             </sl-tree-item>
           </sl-tree-item>
           <sl-tree-item>
             <a href="#design-approach">3.2 Design Approach</a>
+            <sl-tree-item>
+              <a href="#design-statement">3.2.1 Design Statement</a>
+            </sl-tree-item>
+            <sl-tree-item>
+              <a href="#identification-key-subsystems">3.2.2 Identification of Key Subsystems</a>
+            </sl-tree-item>
           </sl-tree-item>
           <sl-tree-item>
             <a href="#functional-decomposition">3.3 Functional Decomposition</a>
           </sl-tree-item>
           <sl-tree-item>
-            <a href="#system-specifications">3.4 System Specifications</a>
+            <a href="#system-specifications-detailed">3.4 System Specifications</a>
           </sl-tree-item>
           <sl-tree-item>
             <a href="#morphological-chart">3.5 Morphological Chart</a>
-          </sl-tree-item>
-          <sl-tree-item>
-            <a href="#concept-selection">3.6 Concept Selection</a>
+            <sl-tree-item>
+              <a href="#concept-selection">3.5.1 Concept Selection</a>
+            </sl-tree-item>
           </sl-tree-item>
         </sl-tree-item>
 
@@ -494,6 +500,232 @@
         <p>
           In the first semester, we focused on cooling, the most critical factor affecting the filament's consistency. The remaining two will be studied in the subsequent semester, after which we will consolidate our learnings and experimental results to design the complete small-scale plastic extrusion machine.
         </p>
+      </div>
+    </div>
+
+    <sl-divider></sl-divider>
+    <div>
+      <div id="design-methodology">
+        <h2>3. Design Methodology</h2>
+      </div>
+
+      <div id="metrics">
+        <h3>3.1 Metrics of Filament Consistency</h3>
+        <p>
+          Commercial 3D printers are designed to work with filament that is 1.75mm in diameter and circular in cross-section. This geometry ensures smooth feeding into the extruder and predictable flow through the nozzle. Issues arise when the filament deviates from these ideal measurements:
+        </p>
+        <ul>
+          <li>Too thick: it may jam the extruder nozzle or increase back-pressure, disrupting the print.</li>
+          <br>
+          <li>Too thin: it may snap during feeding, or the drive gears may fail to grip it consistently, leading to under-extrusion.</li>
+        </ul>
+        <p>
+          As mentioned in Chapter 2.5, there are 2 key metrics that helps us quantify the consistency of filament:
+        </p>
+        <ol>
+          <li>Ovality (cross-sectional variation)</li>
+          <li>Deviation of Diameter (variation along the filament's length)</li>
+        </ol>
+        <p>
+          These metrics help us determine the quality and reliability of the filament. Although both relate to dimensional inconsistency, they describe different modes of variation and arise from different process causes.
+        </p>
+
+        <div id="ovality">
+          <h4>3.1.1 Ovality</h4>
+          <p>
+            <u>Definition</u>
+          </p>
+          <p>
+            Ovality refers to how much a filament's cross section departs from a perfect circle at a single point along its length.
+          </p>
+          <p>
+            It is calculated by measuring the filament's diameter twice at one point, along perpendicular axes, and then finding the difference between the two readings.
+          </p>
+          <p>
+            <strong>Ovality = Maximum Diameter - Minimum Diameter</strong> <em>(at one cross-section)</em>
+          </p>
+          <p>
+            <u>Underlying Cause: Anisotropic Shrinkage</u>
+          </p>
+          <p>
+            Ovality is caused by anisotropic shrinkage of the plastic during cooling, which describes the uneven contraction of filament, leading to a slightly elliptical cross-section. This is the result of the high crystallinity of PP.
+          </p>
+          <p>
+            Typically, plastics with low crystallinity (Eg. PET and PLA) comprise mostly amorphous regions where molecules are irregularly arranged [14]. These regions will have minimal shrinkage during cooling, resulting in minimal distortion to the filament's shape.
+          </p>
+          <p>
+            However, PP has a semi-crystalline structure with a high degree of crystallinity (30-80%) [15]. Regions with crystalline structures have polymer chains that are more efficiently and tightly packed, tending to have a higher density than in the amorphous regions. As a result, significant shrinkage (1-3%) [16] occurs at the semi-crystalline regions during the cooling of PP from its melted state after extrusion, while less shrinkage occurs at the amorphous regions. This uneven, anisotropic shrinkage distorts the shape of the filament and increases ovality.
+          </p>
+          <custom-table-component tag="table-7" source="assets/table7_c3.jpg"
+            subtitle="Table 7: Material Properties of PP, PET, and PLA"></custom-table-component>
+          <p>
+            <em>*rPP/PP material from injection molded products was referenced here as it is the type of waste feedstock raised by NUS SSU</em>
+          </p>
+          <p>
+            From Table 7, compared to PLA—the most common 3D printing material—and PET, which is widely used for recycled filaments, PP exhibits a significantly higher degree of crystallinity and corresponding volumetric shrinkage, by up to eight times and ten times respectively. This makes cooling control far more critical when producing PP filament compared to more dimensionally stable materials like PLA and PET.
+          </p>
+          <p>
+            <u>Solution</u>
+          </p>
+          <p>
+            The uniformity and rate of cooling affects the degree of formation of the crystalline structures within the material [21]. Ensuring that the filament can cool uniformly, and at an even rate would reduce the amount of uneven shrinkage, leading to a lower ovality.
+          </p>
+        </div>
+
+        <div id="deviation-diameter">
+          <h4>3.1.2 Deviation of Diameter</h4>
+          <p>
+            <u>Definition</u>
+          </p>
+          <p>
+            Deviation of Diameter refers to the changes in filament diameter along its length, even if each individual cross-section remains circular.
+          </p>
+          <p>
+            When the diameter is plotted along the filament's length, the data points scatter around the nominal 1.75 mm line—some slightly thicker, some slightly thinner.
+          </p>
+          <p>
+            <u>Underlying Cause: Unstable Extrusion</u>
+          </p>
+          <p>
+            Deviation of diameter is caused by the unstable and inconsistent extrusion of the plastic, which results in portions of the filament to drift above or below the ideal diameter.
+          </p>
+          <p>
+            This is mainly due to PP's complex viscosity being highly sensitive to temperature fluctuations [22]. Even small changes in melt temperature can cause large variations in viscosity, which directly affects the flow rate during extrusion; An increase in temperature leads to a surge in material being extruded, while a decrease in temperature causes significant under-extrusion. These flow instabilities ultimately compromise the tolerance of the filament's nominal diameter.
+          </p>
+          <custom-table-component tag="table-8" source="assets/table8_c3.jpg"
+            subtitle="Table 8: Material Properties of PP, PET, and PLA"></custom-table-component>
+          <p>
+            From Table 8, it can be seen that PP’s complex viscosity is about 5 and 60 times more sensitive to temperature changes compared to PET and PLA respectively. PP’s extreme sensitivity means that the melting and extrusion mechanism must be carefully designed and tightly controlled to prevent fluctuations in filament diameter.
+          </p>
+          <p>
+            <u>Solution</u>
+          </p>
+          <p>
+            Ensuring uniformity in the heating of the filament and stability in the extrusion process will minimize any sudden changes in the flow rate, reducing the fluctuations in filament diameter.
+          </p>
+        </div>
+      </div>
+
+      <div id="design-approach">
+        <h3>3.2 Design Approach</h3>
+        <p>
+          From Chapter 3.1, we have identified the two key metrics of filament consistency — ovality and deviation of diameter — along with their underlying causes and the corresponding solutions to address them (Fig 7).
+        </p>
+        <image-component tag="figure-7" source="assets/figure7_c3.jpg"
+          subtitle="Figure 7: Key Metric, Underlying Cause and Solution"></image-component>
+        <p>
+          From here, we derived our design statement.
+        </p>
+
+        <div id="design-statement">
+          <h4>3.2.1 Design Statement</h4>
+          <p>
+            Our project aims to design a system that can uniformly melt, cool and extrude PP to produce a consistent rPP filament.
+          </p>
+        </div>
+
+        <div id="identification-key-subsystems">
+          <h4>3.2.2 Identification of Key Subsystems</h4>
+          <p>
+            To implement the four necessary solutions, we analysed the extrusion process, and determined that the cooling, heating, feeding and pulling mechanism are the key subsystems responsible for controlling these factors (Fig. 8)
+          </p>
+          <image-component tag="figure-8" source="assets/figure8_c3.jpg"
+            subtitle="Figure 8: Relevant Subsystems for Identified Solutions"></image-component>
+          <p>
+            Focusing on these subsystems allows targeted design and process improvements to address the underlying causes and achieve low ovality and deviation of diameter. This led us to create a functional decomposition diagram that integrated these subsystems and demonstrated the interactions between components.
+          </p>
+        </div>
+      </div>
+
+      <div id="functional-decomposition">
+        <h3>3.3 Functional Decomposition</h3>
+        <image-component tag="figure-9" source="assets/figure9_c3.jpg"
+          subtitle="Figure 9: Functional Decomposition Chart"></image-component>
+        <p>
+          The production of rPP filament can be divided into three main subfunctions: Melting, Cooling and Pulling.
+        </p>
+        <p>
+          <strong>Subfunction 1: Melting</strong>
+        </p>
+        <p>
+          PP feedstock is delivered into the heating mechanism. The mechanism melts the feedstock to form a continuous molten flow, which is pushed through the extrusion nozzle to form the filament. Temperature is regulated through a temperature control signal, ensuring uniform melting.
+        </p>
+        <p>
+          <strong>Subfunction 2: Cooling</strong>
+        </p>
+        <p>
+          The molten filament passes through the Cooling Mechanism, where it solidifies into rPP filament. The Cooling Mechanism should ensure uniform cooling at the desired cooling rate, which is crucial for reducing ovality.
+        </p>
+        <p>
+          <strong>Subfunction 3: Pulling</strong>
+        </p>
+        <p>
+          As the filament solidifies, it is drawn by the pulling mechanism and wound onto the spool via the spooling mechanism.
+        </p>
+        <p>
+          Two key feedback signals regulate this stage,
+        </p>
+        <ul>
+          <li>Diameter control—which monitors and increases or decreases the pulling speed to increase or decrease the filament's diameter respectively</li>
+          <br>
+          <li>Tension control—which maintains an appropriate winding tension to prevent deformation or breakage during spooling.</li>
+        </ul>
+      </div>
+
+      <div id="system-specifications-detailed">
+        <h3>3.4 System Specifications</h3>
+        <p>
+          From our analysis of user needs and comparison of specifications with current market products (Appendix A), the target specifications for our product were derived (Table 9).
+        </p>
+        <custom-table-component tag="table-9" source="assets/table9_c3.jpg"
+          subtitle="Table 9: System Specifications"></custom-table-component>
+      </div>
+
+      <div id="morphological-chart">
+        <h3>3.5 Morphological Chart</h3>
+        <p>
+          We elected to base our experiments on a complete extrusion line to maximise control over the variables that affect filament quality. A fully integrated system eliminates inconsistencies arising from assembling disparate components, ensuring stable process conditions across trials. This allows us to isolate the effect of our specific modification and attribute any changes in filament characteristics directly to it, rather than to uncontrolled hardware variability.
+        </p>
+        <p>
+          The Felfil Evo Extruder and Felfil Spooler were a suitable fit for our experimental system, as it was
+        </p>
+        <ol>
+          <li>Reliable and repeatable</li>
+          <li>Well-documented and modifiable</li>
+        </ol>
+        <p>
+          With the components of the Felfil Evo forming the base set up (green column), a morphological chart (Table 10) with alternative components in each subsystem was created to guide our design conceptualisation.
+        </p>
+        <custom-table-component tag="table-10" source="assets/table10_c3.jpg"
+          subtitle="Table 10: Morphological Chart with Concept Selection (highlighted in blue)"></custom-table-component>
+
+        <div id="concept-selection">
+          <h4>3.5.1 Concept Selection</h4>
+          <p>
+            We decided to first target achieving low ovality in our filament. Hence, our first round of experimentation aims to manipulate the cooling profile of the filament by testing alternative components for the cooling subsystems.
+          </p>
+          <p>
+            <u>Cooling Mechanism</u>
+          </p>
+          <p>
+            <strong>Chosen: 1) Bladeless Fan Ring, & 2) Wind Tunnel</strong>
+          </p>
+          <p>
+            These two concepts were designed to provide a more even cooling profile compared to the air-knife which is designed to produce a flat, single axial cooling profile.
+          </p>
+          <p>
+            The water bath is also not chosen due to the complexity of integrating it into a small- scale extruder system.
+          </p>
+          <p>
+            <u>Cooling Treatment</u>
+          </p>
+          <p>
+            <strong>Chosen: None</strong>
+          </p>
+          <p>
+            Due to the complexity of setting up an air and water quenching system, both were not chosen for this iteration of prototypes.
+          </p>
+        </div>
       </div>
     </div>
 
