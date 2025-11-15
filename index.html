@@ -20,6 +20,9 @@
   <link rel="stylesheet" href="./components/table-of-content/table-of-content.css">
 
   <script type="module" src="./components/image/image-component.js"></script>
+  
+  <script type="module" src="./components/table/custom-table-component.js"></script>
+
 
   <script type="module" src="./components/video/video.js"></script>
 
@@ -231,14 +234,13 @@
 
       <sl-divider></sl-divider>
 
-      <!-- This is an example of what a section might look like -->
       <div id="introduction">
         <h2> 1. Introduction </h2>
         <p>
           Global plastic production has continued to grow at an unprecedented pace, exceeding hundreds of millions of tonnes annually and showing no signs of slowing as demand rises across packaging, consumer goods, medical supplies, and industrial applications. In 2023, the plastic production in 2023 was approximately 436 million metric tons [xx], with only 9% of it being recycled [xx].
         </p>
-        <image-component tag="figure-c1" source="assets/figure_c1.png"
-          subtitle="Fig. 1: Graph of Plastic Volume Consumption by Type [xx]"></image-component>
+        <image-component tag="figure-1" source="assets/figure1_c1.png"
+          subtitle="Figure 1: Graph of Plastic Volume Consumption by Type [xx]"></image-component>
           <p>
             Within this vast volume, we bring our attention to polypropylene (PP), which is one of the most widely used polymers due to its versatility, chemical resistance, and low cost. Despite its prevalence, only around 3% of PP is recycled [xx], remaining as one of the least recycled plastics worldwide. Compared to PET or HDPE, which benefit from established collection and recycling streams, PP faces low market demand, sorting challenges, and material degradation issues, resulting in most being incinerated or disposed to landfills.
           </p>
@@ -248,8 +250,8 @@
           <p>
             This broader issue is mirrored within The National University of Singapore (NUS), where a significant portion of plastic waste, especially from laboratories equipment, containers, and other consumables, is composed of PP. Yet, due to the same structural barriers seen globally, nearly all of this PP waste is sent for incineration rather than recycled.
           </p>
-          <image-component tag="figure-c2" source="assets/figure_c2.jpg"
-            subtitle="Fig. 2: NUS Plastic Waste"></image-component>
+          <image-component tag="figure-2" source="assets/figure2_c1.jpg"
+            subtitle="Figure 2: NUS Plastic Waste"></image-component>
             <p>
               Currently, the plastic waste generated from these labs, including the PP plastic, would have been processed through incineration.
             </p>
@@ -263,92 +265,229 @@
               "What can we do with the current polypropylene (PP) waste in NUS?"
             </p>
       </div>
-
-      <sl-divider></sl-divider>
-
-      <div id="sub-section-1-header-1">
-        <h3>1.1 Sub-section Header 1</h3>
-        <p>
-          Ultrices dui sapien eget mi. Nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit. Dolor purus non enim
-          praesent elementum facilisis. Lacus vestibulum sed arcu non odio euismod lacinia at. Metus aliquam eleifend mi
-          in nulla. Lacus sed viverra tellus in hac habitasse platea. Varius quam quisque id diam vel quam elementum
-          pulvinar. Eleifend quam adipiscing vitae proin sagittis nisl rhoncus. Diam ut venenatis tellus in metus
-          vulputate. Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque. Venenatis lectus magna
-          fringilla
-          urna. In nisl nisi scelerisque eu ultrices. Velit egestas dui id ornare arcu odio ut sem nulla. Quam id leo in
-          vitae. Egestas congue quisque egestas diam in arcu cursus euismod quis. Porttitor leo a diam sollicitudin
-          tempor
-          id eu nisl.
-        </p>
-      </div>
-
-      <div id="sub-section-1-header-2">
-        <h3>1.2 Sub-section Header 2</h3>
-        <p>
-          Fermentum dui faucibus in ornare quam viverra orci. Donec ultrices tincidunt arcu non sodales. A diam maecenas
-          sed enim ut sem viverra. Semper viverra nam libero justo laoreet sit. Mi sit amet mauris commodo quis. Auctor
-          augue mauris augue neque gravida in fermentum et. Auctor elit sed vulputate mi sit amet. Maecenas pharetra
-          convallis posuere morbi leo urna. Sem nulla pharetra diam sit amet nisl. Id nibh tortor id aliquet lectus.
-          Nibh
-          nisl condimentum id venenatis a condimentum vitae sapien. Convallis posuere morbi leo urna molestie at
-          elementum.
-        </p>
-
-        <!-- This is an example of how you might use the image component -->
-        <image-component tag="image" source="assets/requirement.png"
-          subtitle="Image 1: iDP suggested pathway"></image-component>
-      </div>
     </div>
 
-
-    <br />
-    <br />
     <sl-divider></sl-divider>
     <div>
       <div id="section-header-2">
-        <h2>2. Section Header 2</h2>
+        <h2>2. Project Scope</h2>
+      </div>
+
+      <div id="problem-identification">
+        <h3>2.1 Problem Identification</h3>
         <p>
-          Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Mi proin sed libero enim sed faucibus turpis in
-          eu. Odio ut sem nulla pharetra diam sit. Nibh cras pulvinar mattis nunc sed blandit libero. Lacus sed viverra
-          tellus in hac habitasse platea dictumst vestibulum. At augue eget arcu dictum varius duis. Mauris ultrices
-          eros in cursus turpis massa (Lindberg, 1967). Libero nunc consequat interdum varius sit amet mattis. Ut ornare
-          lectus sit amet est placerat in egestas erat. Elementum curabitur vitae nunc sed. Proin nibh nisl condimentum
-          id venenatis a condimentum vitae sapien (Chamberlin et al., 2008). Vitae tempus quam pellentesque nec nam
-          aliquam sem.
+          We calculate the amount of plastic generated by labs, and that's how…
+        </p>
+        <p>
+          Our project's initial starting point is to explore methods for reusing PP plastic on campus, which could not only reduce waste but also align with broader sustainability goals on campus.
+        </p>
+
+        <div id="evaluating-pp-recycling-rate">
+          <h4>2.1.1 Evaluating Polypropylene's Recycling Rate</h4>
+          <p>
+            We first broke down the project by evaluating the key factors behind PP's low recycling rate. The following table highlights the key issues surrounding PP recycling.
+          </p>
+          <custom-table-component tag="table-1" source="assets/table1_c2.jpg"
+            subtitle="Table 1: Key Issues Surrounding PP Recycling"></custom-table-component>
+            <p>
+              As a result, global recycling systems prioritize PET and HDPE due to established bottle-return markets; PP lacks widespread processing lines and infrastructure [xx].
+            </p>
+        </div>
+
+        <div id="core-challenge">
+          <h4>2.1.2 Core Challenge</h4>
+          <p>
+            The core challenge with PP recycling is creating value for rPP as a resource - there is simply little economic incentive to recycle PP.
+          </p>
+          <p>
+            Instead of focusing solely on improving the recycling process, the goal should be to develop end-use applications and markets for rPP that recognise its value, thereby driving demand and making it a viable, sustainable material.
+          </p>
+          <p>
+            By creating value for rPP, we can incentivise more effective recycling, transforming PP waste into a resource that contributes to a circular economy.
+          </p>
+        </div>
+
+        <div id="viable-methods-pp-waste">
+          <h4>2.1.3 Viable Methods for Handling PP Waste</h4>
+          <p>
+            To effectively address PP waste, our team explored and compared three viable methods for upcycling and reusing this material: sequestration, repurposing, and recycling. These methods were evaluated based on their potential for further reuse, which creates new value for the material.
+          </p>
+          <custom-table-component tag="table-2" source="assets/table2_c2.jpg"
+            subtitle="Table 2: Possible Methods of Upcycling and Reusing PP"></custom-table-component>
+          <p>
+            Based on this comparison, recycling emerges as the most sustainable and value-generating approach for managing PP waste. Not only does it allow for the creation of new products, but it also promotes the circulation of materials, thereby contributing to a more sustainable, closed-loop system. 
+          </p>
+          <p>
+            Therefore, focusing efforts on improving the infrastructure and processes for recycling PP is crucial for enhancing its reusability and maximising its potential as a valuable resource.
+          </p>
+        </div>
+
+        <div id="evaluation-potential-methods">
+          <h4>2.1.4 Evaluation of Potential Methods for PP Recycling</h4>
+          <p>
+            To further explore the possibilities for recycling PP waste, we narrowed it down to three potential directions for reusing this material within the recycling process: plastic sheets, pellets, and 3D printing filament.
+          </p>
+          <custom-table-component tag="table-3" source="assets/table3_c2.jpg"
+            subtitle="Table 3: Potential Directions for Reusing PP"></custom-table-component>
+          <p>
+            We determined our next steps by assessing each recycling pathway through two key factors: infrastructure cost and value-add.
+          </p>
+          <ul>
+            <li>Infrastructure costs reflect the level of equipment, technical requirements, and operational setup needed to carry out each method, which directly influence how feasible it is for NUS to implement at different scales.</li>
+            <br>
+            <li>Value-add considers how much additional utility or market relevance is created when PP waste is transformed into a new material.</li>
+          </ul>
+          <p>
+            By comparing these two factors, we identified which recycling methods offered the best balance between practicality and the potential to generate meaningful impact.
+          </p>
+          <custom-table-component tag="table-4" source="assets/table4_c2.jpg"
+            subtitle="Table 4: Comparison of Recycling Methods"></custom-table-component>
+          <p>
+            Based on the comparison in Table 4, 3D printing filament recycling stands out as a promising approach. It offers high value in terms of creative potential for prototyping and small-scale manufacturing. 
+          </p>
+          <p>
+            While plastic sheets and pelletizing each have their merits, they either lack the versatility or incur higher infrastructure costs that limit their applicability for smaller, localized recycling efforts. 
+          </p>
+          <p>
+            Therefore, 3D printing filament recycling is a suitable solution for both educational and commercial applications. This method offers a high-value solution by directly contributing to creative applications such as prototyping, which has significant potential.
+          </p>
+        </div>
+      </div>
+
+      <div id="our-solution">
+        <h3>2.2 Our Solution</h3>
+        <p>
+          Our project aims to convert PP waste into filament. Unlike other recycling methods, filament aligns with rapidly expanding applications in prototyping, education, engineering, and design. This positions filament as the most feasible and impactful product.
+        </p>
+
+        <div id="circular-plastic-economy">
+          <h4>2.2.1 Creating a Circular Plastic Economy</h4>
+          <p>
+            A key strength of our approach is that it enables PP to recirculate continuously within the same ecosystem.
+          </p>
+          <p>
+            Once the 3D-printed parts reach the end of their use due to design iterations, prototyping cycles, or simple wear, they can be recollected, shredded, and re-extruded into new filament. NUS no longer needs to constantly import filament for students to use in their 3D printing.
+          </p>
+          <image-component tag="figure-3" source="assets/figure3_c2.jpg"
+            subtitle="Figure 3: Creation of a Circular Plastic Economy"></image-component>
+          <p>
+            This system is particularly novel: A circular plastic economy is created within NUS, where the material can be recycled multiple times until significant degradation occurs [xx][xx].
+          </p>
+          <p>
+            This localised circularity, turning internal waste directly into internal resources, represents a meaningful shift from traditional recycling approaches.
+          </p>
+        </div>
+      </div>
+
+      <div id="target-audience">
+        <h3>2.3 Target Audience</h3>
+        <p>
+          We selected NUS's Innovation & Design Hub as our first target user. It is the central makerspace for NUS's CDE (College of Design and Engineering), where most CDE students visit for rapid prototyping purposes, primarily 3D printing.
+        </p>
+        <image-component tag="figure-4" source="assets/figure4_c2.jpg"
+            subtitle="Figure 4: Value Chain of a Generic Filament Distributor and our Target Audience"></image-component>
+        <p>
+          Even after these prints are completed or discarded, they can be collected, shredded, and re-extruded to be fed back to the Innovation & Design Hub as recycled filament right back to the Innovation & Design Hub as recycled filament for use.
+        </p>
+        <image-component tag="figure-5" source="assets/figure5_c2.png"
+            subtitle="Figure 5: Circular Plastic Loop within the Value Chain of a Generic Filament Distributor"></image-component>
+      </div>
+
+      <div id="users-insights">
+        <h3>2.4 Users Insights</h3>
+        <p>
+          We identified potential end users at NUS who rely heavily on 3D printing and consume large volumes of plastic filament, especially for prototyping or design projects.
+        </p>
+        <p>
+          <strong>Potential End Users:</strong>
+        </p>
+        <ul>
+          <li>Engineering projects,</li>
+          <br>
+          <li>Design projects,</li>
+          <br>
+          <li>Student makerspaces, and</li>
+          <br>
+          <li>Research labs.</li>
+        </ul>
+        <p>
+          Student makerspaces were inherently part of our consideration, as they operate within the same facilities and workflows as engineering and design makerspaces. However, we will not explicitly highlight them, as their activities are already integrated into the broader campus ecosystem of prototyping and fabrication.
+        </p>
+        <p>
+          We interviewed our chosen two user groups to identify their needs, insights, and use cases (Appendix xx) when selecting specific filament types for their applications. We detailed the use cases and critical properties for each user group interviewed (Table 5).
+        </p>
+        <custom-table-component tag="table-5" source="assets/table5_c2.png"
+            subtitle="Table 5: Use Cases and Critical Properties Considered by Engineering and Design-Centric End Users"></custom-table-component>
+        <p>
+          Students from both the engineering and design groups have an extensive need for 3D printing for various use cases, particularly for rapid prototyping, which overlaps across all the groups.
+        </p>
+        <p>
+          Ease of printing was identified as a critical property, as poor-quality filament posed a risk of jamming and damaging 3D printer nozzles. Additionally, there is a rising demand for eco-friendly alternatives to virgin filament due to excessive plastic waste from ongoing 3D printing projects - such an occurrence was significant within the architecture group, according to our findings (Appendix xx).
         </p>
       </div>
 
-      <div id="sub-section-2-header-1">
-        <h3>2.1. Sub-section Header 1</h3>
+      <div id="analysis-current-solutions">
+        <h3>2.5 Analysis of Current Solutions</h3>
         <p>
-          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-          fames ac. <a href="#image">Link to the image above</a>
+          One particular comment from our interviewees was about the lack of reliable printing - notably, a concern about filament jamming caused by inconsistent filament diameter.
         </p>
-
-        <!-- This is an example of how you might use the video component -->
-        <video-component tag="rick" source="https://www.youtube.com/embed/dQw4w9WgXcQ"
-          subtitle="Video: Never gonna give you up?"></video-component>
+        <p>
+          From the literature review, jamming is caused by either filament breakage or large deviations in diameter and ovality [xx].
+        </p>
+        <p>
+          A filament is deemed consistent if it has
+        </p>
+        <ol>
+          <li>Minimal ovality throughout its entire length, and</li>
+          <li>Low deviation of diameter.</li>
+        </ol>
+        <p>
+          This ensures smooth feeding into the extruder during printing. These two key metrics will be explained in greater depth in Chapter 3.1.
+        </p>
+        <p>
+          Concurrently, we researched current small-scale filament extruders - 3Devo (state-of-the-art), Filabot, and Felfil (Table 6). While most machines were suitable for producing PLA filament, they could neither produce rPP nor PP filament consistently enough to be used reliably.
+        </p>
+        <custom-table-component tag="table-6" source="assets/table6_c2.jpg"
+            subtitle="Table 6: Comparison of Current Solutions’ Capabilities"></custom-table-component>
+        <p>
+          It is worth noting that these machines regularly struggle to produce consistent filament. Research mentions that they require uniform input feedstock, thereby necessitating the use of pellets to produce consistent filament. 
+        </p>
+        <p>
+          Only 3Devo, the state-of-the-art, could produce consistent PLA filament using non-uniform feedstock. However, the resultant diameter tolerance suffers more when non-uniform feedstock is used, which poses as a significant trade-off [xx].
+        </p>
       </div>
 
-      <div id="sub-section-2-header-2">
-        <h3>2.2. Sub-section Header 2</h3>
+      <div id="value-proposition">
+        <h3>2.6 Value Proposition</h3>
         <p>
-          Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra. Dignissim convallis aenean et tortor at
-          risus viverra adipiscing. Facilisi nullam vehicula ipsum a arcu cursus. Adipiscing elit pellentesque
-          habitant
-          morbi tristique senectus et netus. Turpis massa tincidunt dui ut ornare lectus. Suspendisse sed nisi lacus
-          sed. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Ut ornare lectus sit amet est
-          placerat in egestas. Magna fringilla urna porttitor rhoncus. Imperdiet dui accumsan sit amet.
+          To further illustrate the problem-solution fit, we crafted a value proposition canvas to map our user needs to our product features.
         </p>
+        <image-component tag="figure-6" source="assets/figure6_c2.jpg"
+            subtitle="Figure 6: EcoSpool Value Proposition Canvas"></image-component>
+        <p>
+          <u>Value Proposition Statement</u>
+        </p>
+        <p>
+          For designers and engineers who use 3D printing in their product development, our product is a small scale plastic extrusion machine that can produce consistent, high-quality rPP filament made entirely from campus waste unlike small-scale recycling systems that struggle with extruding PP consistently.
+        </p>
+        <p>
+          We aim to create a circular plastic economy within NUS that continuously recirculates PP and significantly extends its usage life.
+        </p>
+      </div>
 
-        <!-- This is an example of how you might use the table component -->
-        <table-component subtitle="Table: Demo table">
-          <div id="table-1"></div>
-        </table-component>
+      <div id="scope-of-work">
+        <h3>2.7 Scope of Work</h3>
+        <p>
+          To design our small scale plastic extrusion machine, we identified three primary processes of filamentation and studied them sequentially:
+        </p>
+        <ol>
+          <li>Cooling</li>
+          <li>Heating</li>
+          <li>Feedstock Control</li>
+        </ol>
+        <p>
+          In the first semester, we focused on cooling, the most critical factor affecting the filament's consistency. The remaining two will be studied in the subsequent semester, after which we will consolidate our learnings and experimental results to design the complete small-scale plastic extrusion machine.
+        </p>
       </div>
     </div>
 
