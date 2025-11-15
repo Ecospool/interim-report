@@ -729,6 +729,199 @@
       </div>
     </div>
 
+    <sl-divider></sl-divider>
+    <div>
+      <div id="experimentation-cooling-system">
+        <h2>4. Experimentation: Cooling System</h2>
+      </div>
+
+      <div id="control-setup">
+        <h3>4.1 Control Set-up</h3>
+        <image-component tag="figure-10" source="assets/figure10_c4.jpg"
+          subtitle="Figure 10: Felfil Evo"></image-component>
+        <p>
+          A detailed explanation of how our control set-up works can be found in Appendix B.
+        </p>
+      </div>
+
+      <div id="hypothesis">
+        <h3>4.2 Hypothesis</h3>
+        <p>
+          This semester, our focus was on designing a cooling system that could evenly cool around the filament's circumference, which would allow the filament to crystallise uniformly with minimal anisotropic volumetric shrinkage, producing a filament with an ovality that meets the consistency requirements (< 5% of the filament diameter).
+        </p>
+        <p>
+          Our guiding hypothesis is:
+        </p>
+        <p style="text-align: center; font-weight: bold;">
+          Increased uniformity of filament cooling directly correlates with a lower ovality in the produced filament.
+        </p>
+      </div>
+
+      <div id="key-parameters">
+        <h3>4.3 Key Parameters</h3>
+        <custom-table-component tag="table-11" source="assets/table11_c4.jpg"
+          subtitle="Table 11: Key Variables"></custom-table-component>
+        <p>
+          We established that the Felfil Evo is able to achieve our technical requirements, and hence our variable configurations are as such:
+        </p>
+        <custom-table-component tag="table-12" source="assets/table12_c4.jpg"
+          subtitle="Table 12: Chosen Variables Values"></custom-table-component>
+        <p>
+          Once the system reached steady-state operation under these settings, we conducted each experiment by allowing the filament to stabilise before sampling.
+        </p>
+        <p>
+          We defined stabilisation as a period of approximately 2 minutes during which the Felfil spooler's single-axis diameter reading fluctuated by only 0.01–0.03 mm.
+        </p>
+        <p>
+          This allows us to confidently attribute any observed differences in filament ovality to changes in the cooling subsystem rather than to upstream process variability.
+        </p>
+      </div>
+
+      <div id="methodology">
+        <h3>4.4 Methodology</h3>
+
+        <div id="data-measurement">
+          <h4>4.4.1 Data Measurement</h4>
+          <p>
+            Our measurement subsystem, part of the diameter control system, required changes. The Felfil Spooler's built-in single-axis diameter sensor cannot capture asymmetric deformation (ovality), which is common in rPP/PP filament. This is illustrated in Figure 11 and 12 below:
+          </p>
+          <image-component tag="figure-11" source="assets/figure11_c4.jpg"
+            subtitle="Figure 11: Oval Filament and Cross-Section"></image-component>
+          <image-component tag="figure-12" source="assets/figure12_c4.jpg"
+            subtitle="Figure 12: Zoomed in Cross-sectional area of Oval Filament - Single Axis measurement"></image-component>
+          <p>
+            Hence, to accurately quantify the ovality of the extruded rPP/PP filament, we used a vernier caliper to take manual cross-sectional measurements along the major and minor axes instead (Figure 13).
+          </p>
+          <image-component tag="figure-13" source="assets/figure13_c4.jpg"
+            subtitle="Figure 13: Zoomed in Cross-sectional area of Oval Filament - Dual Axis Measurement"></image-component>
+        </div>
+
+        <div id="data-collection">
+          <h4>4.4.2 Data Collection</h4>
+          <p>Our step-by-step method is stated as such:</p>
+          <ol>
+            <li>1.2 metres of produced filament will be collected.</li>
+            <li>Each filament segment is measured using a vernier caliper in two orthogonal axes at 10 cm intervals, yielding 20 data points per run.</li>
+            <li>The experiment was repeated 3 times under the same conditions.</li>
+          </ol>
+          <p>
+            Multiple measurements were also taken at each data point to ensure the maximum and minimum cross-sectional diameters for accurate ovality evaluation.
+          </p>
+          <p>
+            To improve reliability and account for run-to-run variation, experiments were conducted in triplets to ensure consistency, reliability and reproducibility of results. This allowed us to detect and minimize errors, check for variability in data, and confirm that the observed effects were due to our modification of parameters and not random chance or external noise factors.
+          </p>
+          <p>
+            The average of these three runs was then treated as the ground truth for that cooling configuration and used as the primary basis for comparison across all experiments.
+          </p>
+        </div>
+
+        <div id="data-processing">
+          <h4>4.4.3 Data Processing</h4>
+          <p>
+            For the raw values we collected from each experimental run, we computed the following metrics:
+          </p>
+          <ul>
+            <li>Average diameter: calculated as (D<sub>max</sub> + D<sub>min</sub>)/2 for each measurement point.</li>
+            <li>Standard deviation of diameter: using the sample standard deviation formula:
+              <span class="formula">S = &radic;(&Sigma;(D - d)<sup>2</sup> / (n - 1))</span> where D is the average diameter at each point and n is the number of data points (20).</li>
+            <li>Minimum diameter: smallest average diameter recorded across the 20 points.</li>
+            <li>Maximum diameter: largest average diameter recorded.</li>
+          </ul>
+          <p>
+            To quantify filament ovality, we computed:
+          </p>
+          <ul>
+            <li>Pointwise ovality: Dmax- Dmin for each point</li>
+            <li>Mean ovality: average of all pointwise ovality values</li>
+            <li>Maximum ovality: largest ovality value observed across the filament</li>
+          </ul>
+        </div>
+
+        <div id="modification-1">
+          <h3>4.5 Modification 1: Bladeless Fan Ring</h3>
+          <div id="modification-1-description">
+            <h4>4.5.1 Description</h4>
+            <p>
+              Following the baseline experiments using the default Felfil cooling configuration, we proceeded with our first modification to the cooling subsystem (Fig 14), corresponding to Concept A in the morphological chart (Chapter 3.5).
+            </p>
+            <p>
+              To experimentally validate that cooling uniformity is a dominant factor influencing filament ovality, the bladeless fan was selected for its annular airflow profile, which provides low-gradient, uniform circumferential cooling. It is a simple and relatively compact retrofit, making it easy to integrate into our control setup.
+            </p>
+            <image-component tag="figure-14" source="assets/figure14_c4.jpg"
+              subtitle="Figure 14: a) Control setup. b) Bladeless Fan setup, Concept A"></image-component>
+            <p>
+              The fan was positioned so that its annular outlet enclosed the filament path between the extruder and the spooler (Fig 15), creating a more symmetrical cooling region. 
+            </p>
+            <image-component tag="figure-15" source="assets/figure15_c4.jpg"
+              subtitle="Figure 15: Filament passes through the centre of the bladeless fan"></image-component>
+              <p>
+                With reference to the methodology in Chapters 4.1.3 and 4.1.4, we evaluated whether this increase in cooling uniformity would reduce anisotropic volumetric shrinkage and, consequently, result in lower ovality values across the 2m filament segment. 
+              </p>
+          </div>
+          <div id="modification-1-results">
+            <h4>4.5.2 Results & Discussion</h4>
+            <p>
+              Figure 16 below shows the mean ovality trends for both the control (default cooling fan array) and the bladeless fan configuration across increasing wind speeds.
+            </p>
+            <image-component tag="figure-16" source="assets/figure16_c4.jpg"
+              subtitle="Figure 16: Mean Ovality vs Wind Speed for Bladeless Fan and Control Setup"></image-component>
+              <p>
+                For the Control Setup, mean ovality remained relatively low at the lowest fan setting but increased consistently as fan speed increased. This trend indicates that stronger airflow applied from a single direction introduced greater cooling asymmetry, which in turn led to higher anisotropic shrinkage and increased ovality. As wind speed increased from 0.8 m/s to 1.1 m/s, mean ovality rose from 0.062 mm to 0.081 mm. A further increase in wind speed to 1.8 m/s resulted in an additional rise in mean ovality to 0.097 mm, reinforcing the observation that higher unidirectional airflow exacerbates filament cross-section distortion.
+              </p>
+              <p>
+                In contrast, the Bladeless Fan Setup initially exhibited the opposite behaviour. Between 0.8 m/s and 1.1 m/s, mean ovality decreased from 0.096 mm to 0.090 mm, aligning with our expectation that a more circumferential and evenly distributed cooling profile would reduce anisotropic shrinkage. However, at the highest tested wind speed of 1.8 m/s, mean ovality increased to 0.109 mm. This produced a non-monotonic trend that diverged from our original hypothesis, which anticipated a continuous reduction in ovality with increasing uniform airflow.
+              </p>
+              <p>
+                To understand this, we examined existing airflow studies on bladeless fans. These studies show that bladeless airflow is not truly uniform around the ring; rather, the upper and lateral regions tend to receive disproportionately higher air velocities compared to the lower portions of the annulus. This creates circumferential velocity gradients rather than a perfectly even cooling field (Fig 17). 
+              </p>
+              <image-component tag="figure-17" source="assets/figure17_c4.jpg"
+              subtitle="Figure 17: Circumferential Velocity Gradients [28]"></image-component>
+              <p>
+                At low to moderate wind speeds, this airflow pattern still improved cooling uniformity compared to the control. However, as wind speed increased, these inherent velocity gradients were amplified, causing certain regions of the filament to cool and crystallise significantly faster than others. This reintroduced localised crystallisation gradients, resulting in increased ovality once airflow velocity exceeded a certain threshold.
+              </p>
+          </div>
+          <div id="conclusion-1">
+            <h4>4.5.3 Conclusion 1</h4>
+            <p>
+              We concluded that while the bladeless fan provided marginally better cooling uniformity than the default setup, it was still insufficient for achieving consistently low ovality across all operating conditions. 
+            </p>
+            <p>
+              Nonetheless, our results demonstrated that a more uniform cooling environment had a positive impact on reducing ovality of the filament. Hence, we progressed to the next modification, a wind tunnel, that further enhances the uniformity of cooling.
+            </p>
+          </div>
+        </div>
+
+        <div id="modification-2">
+          <h3>4.6 Modification 2: Wind Tunnel</h3>
+          <div id="modification-2-description">
+            <h4>4.6.1 Description</h4>
+            <p>
+              We advanced to the Wind Tunnel cooling system (Concept B) to eliminate the circumferential airflow inconsistencies identified earlier.
+            </p>
+            <p>
+              The wind tunnel confines and channels airflow through a ‘cooling chamber’, ensuring air moves smoothly along the filament’s axis rather than dispersing unevenly. This promotes consistent convective heat transfer across the entire circumference of the filament and reduces the formation of localised crystallisation gradients and hence ovality.
+            </p>
+            <p>
+              We 3D-printed a custom wind tunnel using PLA. Air is supplied by fan motors through four slanted inlet ducts, each oriented to guide airflow along the tunnel interior. This angled-inlet configuration increases the uniformity of the downstream velocity profile and helps maintain steady, axial flow over the entire length of the cooling zone. Figures 18-22 show the 3D-printed wind tunnel, its airflow-velocity simulation, and the assembled setup integrated with the control system.
+            </p>
+            <image-component tag="figure-18" source="assets/figure18_c4.jpg"
+              subtitle="Figure 18: PLA, 3D Printed Wind Tunnel"></image-component>
+            <image-component tag="figure-19" source="assets/figure19_c4.jpg"
+              subtitle="Figure 19: Side view of 5V DC Fan"></image-component>
+            <image-component tag="figure-20" source="assets/figure20_c4.jpg"
+              subtitle="Figure 20: Top view of 5V DC Fan"></image-component>
+            <image-component tag="figure-21" source="assets/figure21_c4.jpg"
+              subtitle="Figure 21: Cross Section view of Wind Tunnel with filament through center"></image-component>
+            <image-component tag="figure-22" source="assets/figure22_c4.jpg"
+              subtitle="Figure 22: Felfil Set Up with Wind Tunnel"></image-component>
+            <p>
+              Compared to the Bladeless Fan and the default Cooling Fan Array, this design provides a substantially more controlled cooling environment, optimised explicitly for reducing anisotropic shrinkage and achieving minimum filament ovality.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- This is an example of how you can use the references component to create references -->
     <div id="references" class="references">
       <sl-divider></sl-divider>
