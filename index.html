@@ -91,10 +91,9 @@
             </sl-tree-item>
           </sl-tree-item>
           <sl-tree-item>
-            <a href="#users-insights">2.3 Users Insights</a>
-          </sl-tree-item>
+            <a href="#target-audience">2.3 Target Audience</a>          </sl-tree-item>
           <sl-tree-item>
-            <a href="#target-audience">2.4 Target Audience</a>
+            <a href="#users-insights">2.4 Users Insights</a>
           </sl-tree-item>
           <sl-tree-item>
             <a href="#analysis-current-solutions">2.5 Analysis of Current Solutions</a>
@@ -170,7 +169,10 @@
               <a href="#modification-1-description">4.5.1 Description</a>
             </sl-tree-item>
             <sl-tree-item>
-              <a href="#modification-1-results">4.5.2 Results & Conclusion</a>
+              <a href="#modification-1-results">4.5.2 Results & Conclusion 1</a>
+            </sl-tree-item>
+            <sl-tree-item>
+              <a href="#modification-1-conclusion">4.5.3 Conclusion 1</a>
             </sl-tree-item>
           </sl-tree-item>
           <sl-tree-item>
@@ -179,7 +181,10 @@
               <a href="#modification-2-description">4.6.1 Description</a>
             </sl-tree-item>
             <sl-tree-item>
-              <a href="#modification-2-results">4.6.2 Results & Conclusion</a>
+              <a href="#modification-2-results">4.6.2 Results & Conclusion 2</a>
+            </sl-tree-item>
+            <sl-tree-item>
+              <a href="#modification-2-conclusion">4.6.3 Conclusion 2</a>
             </sl-tree-item>
           </sl-tree-item>
           <sl-tree-item>
@@ -198,7 +203,7 @@
           <sl-tree-item>
             <a href="#future-work">5.3 Future Work</a>
             <sl-tree-item>
-              <a href="#gradual-cooling">5.3.1 Gradual Cooling</a>
+              <a href="#temperature-controlled-cooling">5.3.1 Temperature Controlled Cooling</a>
             </sl-tree-item>
             <sl-tree-item>
               <a href="#deviation-diameter">5.3.2 Deviation of Diameter</a>
@@ -219,7 +224,17 @@
         </sl-tree-item>
 
         <sl-tree-item>
-          <a href="#appendix">Appendix</a>
+          <a href="#conclusion">6. Conclusion</a>
+        </sl-tree-item>
+
+        <sl-tree-item expanded>
+          <a href="#appendices">Appendices</a>
+          <sl-tree-item>
+            <a href="#appendixA">Appendix A: User Needs Analysis</a>
+          </sl-tree-item>
+          <sl-tree-item>
+            <a href="#appendixB">Appendix B: Felfil Evo Process</a>
+          </sl-tree-item>
         </sl-tree-item>
       </sl-tree>
     </div>
@@ -278,7 +293,7 @@
 
     <sl-divider></sl-divider>
     <div>
-      <div id="section-header-2">
+      <div id="project-scope">
         <h2>2. Project Scope</h2>
       </div>
 
@@ -887,7 +902,7 @@
                 At low to moderate wind speeds, this airflow pattern still improved cooling uniformity compared to the control. However, as wind speed increased, these inherent velocity gradients were amplified, causing certain regions of the filament to cool and crystallise significantly faster than others. This reintroduced localised crystallisation gradients, resulting in increased ovality once airflow velocity exceeded a certain threshold.
               </p>
           </div>
-          <div id="conclusion-1">
+          <div id="modification-1-conclusion">
             <h4>4.5.3 Conclusion 1</h4>
             <p>
               We concluded that while the bladeless fan provided marginally better cooling uniformity than the default setup, it was still insufficient for achieving consistently low ovality across all operating conditions. 
@@ -970,7 +985,7 @@
             <image-component tag="figure-31" source="assets/figure31_c4.jpg"
               subtitle="Figure 31: Wind flow at 3.7m/s. Non-linear windflow along filament surface (Cut Plot)"></image-component>
             <p>
-              subtitle="Figure 31: Wind flow at 3.7m/s. Non-linear windflow along filament surface (Cut Plot)"></image-component>
+              This results in an increase in anisotropic shrinkage and thus ovality similar to lower cooling rates as compared to more moderate cooling rates.
             </p>
             <p>
               Despite this slight rise, however, the mean ovality at 3.7 m/s remained below 0.080, which is within our consistency threshold. This indicates that while high airflow rates can introduce diminishing returns, they do not compromise overall filament quality.
@@ -1008,6 +1023,9 @@
       
       <h2>5. Evaluation</h2>
       <div id="evaluation">
+        <h2>5. Evaluation</h2>
+      </div>
+      <div id="evaluation-target-specs">
         <h3>5.1 Evaluation Against Target System Specifications</h3>
         <p>
           Focusing solely on the cooling mechanism, our wind tunnel has successfully reduced the ovality 
@@ -1138,7 +1156,7 @@
           </p>
         </div>
         
-        <div id="ecospool-pilot-programme">
+        <div id="pilot-programme">
           <h4>5.3.5 EcoSpool Filament Pilot Programme</h4>
           <p>
             Finally, as we prototype and produce sufficiently large spools of consistent rPP filament, we will provide these spools to the Innovation & Design Hub. 
@@ -1209,23 +1227,28 @@
   </div>
       
     <sl-divider></sl-divider>
-      <div id="appendices">
-        <h3>Appendices</h3>
-        <p>
-        Appendix A: User Needs Analysis
-        </p>
-        <p>
+    <div id="appendices">
+      <h2>Appendices</h2>
+
+      <div id="appendixA">
+        <h3>Appendix A: User Needs Analysis</h3>
         <custom-table-component tag="Appendix-A1" source="assets/Appendix A1_AA.png"
           subtitle=""></custom-table-component>
         <custom-table-component tag="Appendix-A2" source="assets/Appendix A2_AA.png"
-           subtitle=""></custom-table-component>
+          subtitle=""></custom-table-component>
         <custom-table-component tag="Appendix-A3" source="assets/Appendix A3_AA.png"
-           subtitle=""></custom-table-component>
+          subtitle=""></custom-table-component>
+      </div>
+
+      <div id="appendixB">
+        <h3>Appendix B: Felfil Evo Process</h3>
+        <p>
+          [Add Appendix B content here - detailed explanation of how the control set-up works]
         </p>
       </div>
-    </ul>
-  </div>
-      
+    </div>
+
+    <sl-divider></sl-divider>
     <div id="references" class="references">
       <sl-divider></sl-divider>
       <h2>References</h2>
