@@ -922,11 +922,82 @@
               Compared to the Bladeless Fan and the default Cooling Fan Array, this design provides a substantially more controlled cooling environment, optimised explicitly for reducing anisotropic shrinkage and achieving minimum filament ovality.
             </p>
           </div>
+          <div id="modification-2-results">
+            <h4>4.6.2 Results & Discussion 2</h4>
+            <image-component tag="figure-23" source="assets/figure23_c4.jpg"
+              subtitle="Figure 23: Mean Ovality against Wind Speed for Wind Tunnel, Bladeless Fan, and Control Setup"></image-component>
+            <p>
+              The results for the Wind Tunnel configuration (Figure 23) showed a clear and consistent decrease in mean ovality with increasing wind speed, confirming our hypothesis that more uniform, axial cooling would minimise anisotropic shrinkage. Compared to both the Control Setup and the Bladeless Fan, the Wind Tunnel produced filament with substantially lower ovality, indicating that the confined airflow successfully enabled more even heat transfer around the entire filament circumference.
+            </p>
+            <p>
+              As wind speed increased from 0.8m/s to 1.1m/s, mean ovality decreased from 0.070mm to 0.066mm. As wind speed further increased to 1.8m/s, mean ovality continued decreasing, to 0.063mm, below that of the control (0.097mm) and bladeless fan (0.109mm) setups at the same wind speed.
+            </p>
+            <p>
+              As seen from Figure 24 to 27, the wind flow within the Wind Tunnel is very uniform. Additionally, assuming the filament has a perfectly smooth surface, no turbulent flow was observed along the surface of the filament’s wall (Figure 28) indicating a uniform heat transfer via convection on the surface of the filament.
+            </p>
+            <image-component tag="figure-24" source="assets/figure24_c4.jpg"
+              subtitle="Figure 24: Isometric view of Flow Trajectories of air flow in Wind Tunnel"></image-component>
+            <image-component tag="figure-25" source="assets/figure25_c4.jpg"
+              subtitle="Figure 25: Side view of Flow Trajectories of air flow in Wind Tunnel"></image-component>
+            <image-component tag="figure-26" source="assets/figure26_c4.jpg"
+              subtitle="Figure 26: Side view of Cut Plot of air flow in Wind Tunnel"></image-component>
+            <image-component tag="figure-27" source="assets/figure27_c4.jpg"
+              subtitle="Figure 27: Front view of Cut Plot of air flow"></image-component>
+            <image-component tag="figure-28" source="assets/figure28_c4.jpg"
+              subtitle="Figure 28: Air Flow around filament’s surface (no turbulent flow)"></image-component>
+            <p>
+              <u>Further Investigation</u>
+            </p>
+            <p>
+              To further investigate the limits of this effect, we increased the wind speed to 3.7 m/s, the maximum speed achievable for our setup.
+            </p>
+            <image-component tag="figure-29" source="assets/figure29_c4.jpg"
+              subtitle="Figure 29: Mean Ovality against Wind Speed for Wind Tunnel and Control setup"></image-component>
+            <p>
+              At an increased wind speed of 3.7 m/s, the filament produced by the Wind Tunnel still exhibited lower mean ovality than the original baseline, but its ovality values were higher than those recorded at lower wind speeds (Fig 29). This created a slight upward deviation from the previously smooth decreasing trend.
+            </p>
+            <p>
+              It is known that crystallisation typically decreases with increased cooling rate, which would consequently decrease ovality. It is likely that with increased wind speed beyond a certain rate, turbulent wind flow along the surface of the filament occurred (Figure 30 & 31), resulting in an inconsistent and decreased cooling rate. 
+            </p>
+            <image-component tag="figure-30" source="assets/figure30_c4.jpg"
+              subtitle="Figure 30: Wind flow at 3.7m/s. Non-linear windflow along filament surface (Flow Trajectory)"></image-component>
+            <image-component tag="figure-31" source="assets/figure31_c4.jpg"
+              subtitle="Figure 31: Wind flow at 3.7m/s. Non-linear windflow along filament surface (Cut Plot)"></image-component>
+            <p>
+              subtitle="Figure 31: Wind flow at 3.7m/s. Non-linear windflow along filament surface (Cut Plot)"></image-component>
+            </p>
+            <p>
+              Despite this slight rise, however, the mean ovality at 3.7 m/s remained below 0.080, which is within our consistency threshold. This indicates that while high airflow rates can introduce diminishing returns, they do not compromise overall filament quality.
+            </p>
+          </div>
+
+          <div id="modification-2-conclusion">
+            <h4>4.6.3 Conclusion 2</h4>
+            <p>
+              We hence concluded that the wind tunnel was the optimal cooling configuration tested, with ideal wind speeds between 1.8 m/s and 3.7 m/s. This produces the lowest and most stable ovality values.
+            </p>
+          </div>
+
+          <div id="overall-conclusions-insights">
+            <h3>4.7 Overall conclusions and Insights</h3>
+            <p>
+              Across all three cooling configurations tested, the standard deviation of filament diameter remained roughly the same, with only minimal fluctuations observed (Figure 32).
+            </p>
+            <image-component tag="figure-32" source="assets/figure32_c4.jpg"
+              subtitle="Figure 32: Standard Deviation against Wind Speed for Wind Tunnel, Bladeless Fan, and Control setup"></image-component>
+            <p>
+              Since diameter variability is predominantly influenced by extrusion rate stability and melt-temperature uniformity, as supported by prior studies on thermoplastic filament formation [29], this consistency confirms that our process parameters were well-controlled. It validates that we successfully isolated cooling as the primary experimental variable, with upstream extrusion conditions remaining constant.
+            </p>
+            <p>
+              We observed that more uniform cooling reduced anisotropic shrinkage, indicating that the filament crystallised more evenly,thereby lowering ovality and supporting our initial hypothesis. However, beyond a certain airflow level (eg. 3.7 m/s), ovality began to rise again.
+            </p>
+            <p>
+              We observed that more uniform cooling reduced anisotropic shrinkage, indicating that the filament crystallised more evenly,thereby lowering ovality and supporting our initial hypothesis. However, beyond a certain airflow level (eg. 3.7 m/s), ovality began to rise again.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- This is an example of how you can use the references component to create references -->
       <h2>5. Evaluation</h2>
       <div id="evaluation">
         <h3>5.1 Evaluation Against Target System Specifications</h3>
